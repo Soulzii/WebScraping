@@ -17,13 +17,26 @@ namespace Webscraping
 {
     public partial class Form1 : Form
     {
+        List<FMStation> stations;
+        WebScraper scraper = new WebScraper();
         public Form1()
         {
             InitializeComponent();
+            stations = new List<FMStation>();
         }
 
         private void btnHaalFrequenciesOp_Click(object sender, EventArgs e)
         {
+            stations = scraper.GetListOfStations();
+
+            for (int i = 0; i < stations.Count; i++)
+            {
+                //int n = GVFrequencies.Rows.Add();
+                //GVFrequencies.Rows[i].Cells[0].Value = stations[i].MHz;
+                //GVFrequencies.Rows[i].Cells[1].Value = stations[i].Omroep;
+                //GVFrequencies.Rows[i].Cells[2].Value = stations[i].OmroepLocatie;
+                GVFrequencies.Rows.Insert(i, stations[i].MHz, stations[i].Omroep, stations[i].OmroepLocatie);
+            }
         }
 
 
@@ -31,7 +44,7 @@ namespace Webscraping
 
     #region POC-HtmlAgilityPack
     //String loc = "C:\\Users\\Dwight\\Downloads\\Htmldoc.html";
-    //HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+    //HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument(); /* HtmlWeb.Load */
     //
     //    doc.Load(loc);
     //    foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//td"))

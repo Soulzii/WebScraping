@@ -8,11 +8,15 @@ namespace Webscraping
 {
     class FMStation
     {
-        public double MHz { get; private set; }
+        public String MHz { get; private set; }
         public String Omroep { get; private set; }
-        public String Provincie { get; private set; }
         public String OmroepLocatie { get; private set; }
 
-
+        public FMStation(String MHz, String Omroep, String OmroepLocatie)
+        {
+            this.MHz = MHz;
+            this.Omroep = Omroep;
+            this.OmroepLocatie = OmroepLocatie;
+        }
     }
 }

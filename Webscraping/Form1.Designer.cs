@@ -36,10 +36,8 @@
             this.tbMaxRange = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Frequency = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Provincie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Coordinaten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OmroepLocatie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Omroep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OmroepLocatie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GVFrequencies)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,10 +56,8 @@
             this.GVFrequencies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GVFrequencies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Frequency,
-            this.Provincie,
-            this.Coordinaten,
-            this.OmroepLocatie,
-            this.Omroep});
+            this.Omroep,
+            this.OmroepLocatie});
             this.GVFrequencies.Location = new System.Drawing.Point(26, 24);
             this.GVFrequencies.Name = "GVFrequencies";
             this.GVFrequencies.Size = new System.Drawing.Size(542, 250);
@@ -112,25 +108,15 @@
             this.Frequency.HeaderText = "Frequency";
             this.Frequency.Name = "Frequency";
             // 
-            // Provincie
+            // Omroep
             // 
-            this.Provincie.HeaderText = "Provincie";
-            this.Provincie.Name = "Provincie";
-            // 
-            // Coordinaten
-            // 
-            this.Coordinaten.HeaderText = "Coordinaten";
-            this.Coordinaten.Name = "Coordinaten";
+            this.Omroep.HeaderText = "Omroepnaam";
+            this.Omroep.Name = "Omroep";
             // 
             // OmroepLocatie
             // 
             this.OmroepLocatie.HeaderText = "OmroepLocatie";
             this.OmroepLocatie.Name = "OmroepLocatie";
-            // 
-            // Omroep
-            // 
-            this.Omroep.HeaderText = "Omroepnaam";
-            this.Omroep.Name = "Omroep";
             // 
             // Form1
             // 
@@ -162,10 +148,8 @@
         private System.Windows.Forms.TextBox tbMaxRange;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Frequency;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Provincie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Coordinaten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OmroepLocatie;
         private System.Windows.Forms.DataGridViewTextBoxColumn Omroep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OmroepLocatie;
     }
 }
 
