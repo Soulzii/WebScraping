@@ -23,7 +23,7 @@ namespace Webscraping
             String location = "http://www.radiofreak.nl/frequenties";
             HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlWeb().Load(location);
             int count = 0;
-            String MHz = "";
+            double MHz = 0;
             String zender = "";
             String locatie = "";
             int i = 0;
@@ -36,7 +36,11 @@ namespace Webscraping
                         switch (i)
                         {
                             case 0:
-                                MHz = link2.InnerText;
+                                if (link2.InnerText.Contains("nbsp"))
+                                {
+                                    return stations;
+                                }
+                                MHz = StringToDouble(link2.InnerText);
                                 break;
                             case 1:
                                 zender = link2.InnerText;
@@ -53,12 +57,21 @@ namespace Webscraping
                     i = 0;
                 }
                 count++;
-                if (count == 6)
+                if (count < 0)
                 {
                     return stations;
                 }
             }
-            return null;
+            return stations;
+        }
+
+        public double StringToDouble(String input)
+        {
+            String[] split = input.Split(new char[]{'.'});
+            double FSegment = Convert.ToDouble(split[0]);
+            double SSegment = Convert.ToDouble(split[1]);
+            double returner = FSegment + (SSegment / 10);
+            return returner;
         }
     }
 }
